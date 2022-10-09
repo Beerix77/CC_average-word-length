@@ -4,24 +4,31 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         //Scanner keyboard = new Scanner(System.in);
         //String input = keyboard.nextLine();
 
         String test = "This is a string for testing average word length";
+        // concatenate String to include a " " at end of phrase; enables iteration method to include final word.
+        String amendedTest = test + " ";
 
-        String[] arr = test.split("");
+
+        //Create Array with individual chars of String
+        String[] arr = amendedTest.split("");
         System.out.println(Arrays.toString(arr));
 
+
+        // initialise variables
         int words = 0;
         int letterCount = 0;
 
-        ArrayList <Integer> letters = new ArrayList<>();
+        // create new ArrayList object for storing all word lengths
+        ArrayList<Integer> letters = new ArrayList<>();
 
-        
-        for (int i = 0; i < arr.length; i++){
-        //for (String s : arr) {
+
+        // iterate through Array counting letters and omitting punctuation. When " " is detected, a word is counted.
+        for (int i = 0; i < arr.length; i++) {
             if (!arr[i].equals(".") && !arr[i].equals(",") && !arr[i].equals("'") && !arr[i].equals("!")
                     && !arr[i].equals("?") && !arr[i].equals(";") && !arr[i].equals(":") && !arr[i].equals("(")
                     && !arr[i].equals(")") && !arr[i].equals(" ")) {
@@ -32,11 +39,12 @@ public class Main {
                 letterCount = 0;
             }
         }
-        System.out.println(letters);
-        System.out.println(words);
+        //System.out.println(letters);
+        //System.out.println(words);
 
 
+        // calculate average word length
 
 
-        }
+    }
 }
