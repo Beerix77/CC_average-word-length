@@ -12,19 +12,21 @@ public class Main {
         String test = "This is a string for testing average word length";
 
         String[] arr = test.split("");
-        //System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
 
         int words = 0;
         int letterCount = 0;
 
         ArrayList <Integer> letters = new ArrayList<>();
 
-        for (String s : arr) {
-            if (!s.equals(".") && !s.equals(",") && !s.equals("'") && !s.equals("!")
-                    && !s.equals("?") && !s.equals(";") && !s.equals(":") && !s.equals("(")
-                    && !s.equals(")") && !s.equals(" ")) {
+        
+        for (int i = 0; i < arr.length; i++){
+        //for (String s : arr) {
+            if (!arr[i].equals(".") && !arr[i].equals(",") && !arr[i].equals("'") && !arr[i].equals("!")
+                    && !arr[i].equals("?") && !arr[i].equals(";") && !arr[i].equals(":") && !arr[i].equals("(")
+                    && !arr[i].equals(")") && !arr[i].equals(" ")) {
                 letterCount++;
-            } else if (s.equals(" ")) {
+            } else if (arr[i].equals(" ")) {
                 words++;
                 letters.add(letterCount);
                 letterCount = 0;
