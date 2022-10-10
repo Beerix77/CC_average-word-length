@@ -1,3 +1,4 @@
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -36,15 +37,25 @@ public class Main {
             } else if (arr[i].equals(" ")) {
                 words++;
                 letters.add(letterCount);
-                letterCount = 0;
+                letterCount = 0;            // reset letter count per word
             }
         }
-        //System.out.println(letters);
-        //System.out.println(words);
+        System.out.println(letters);
+        System.out.println(words);
 
 
         // calculate average word length
+        int lettersTotal = 0;
+        int averageWord = 0;
 
+        // use 'get' since using ArrayList
+        for (int i = 0; i < letters.size(); i++){
+            lettersTotal += letters.get(i);
+        }
+        //System.out.println(lettersTotal);
+        averageWord = lettersTotal/words;
+        System.out.println("Average word length is: " + averageWord);
 
     }
+
 }
