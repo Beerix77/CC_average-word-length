@@ -1,4 +1,3 @@
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -9,8 +8,10 @@ public class Main {
 
         //Scanner keyboard = new Scanner(System.in);
         //String input = keyboard.nextLine();
+        //String test = "This is a string for testing average word length";
+        String test = "this phrase has multiple words";
 
-        String test = "This is a string for testing average word length";
+
         // concatenate String to include a " " at end of phrase; enables iteration method to include final word.
         String amendedTest = test + " ";
 
@@ -27,7 +28,7 @@ public class Main {
         // create new ArrayList object for storing all word lengths
         ArrayList<Integer> letters = new ArrayList<>();
 
-
+        // TODO add numerals to exclusion
         // iterate through Array counting letters and omitting punctuation. When " " is detected, a word is counted.
         for (int i = 0; i < arr.length; i++) {
             if (!arr[i].equals(".") && !arr[i].equals(",") && !arr[i].equals("'") && !arr[i].equals("!")
@@ -46,15 +47,15 @@ public class Main {
 
         // calculate average word length
         int lettersTotal = 0;
-        int averageWord = 0;
+        float averageWord;
 
         // use 'get' since using ArrayList
         for (int i = 0; i < letters.size(); i++){
             lettersTotal += letters.get(i);
         }
         //System.out.println(lettersTotal);
-        averageWord = lettersTotal/words;
-        System.out.println("Average word length is: " + averageWord);
+        averageWord = (float)lettersTotal/words;
+        System.out.println("Average word length is: " + (int)Math.ceil(averageWord));
 
     }
 
